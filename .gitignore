@@ -3,7 +3,6 @@
 .directory
 .bash_history
 .env
-docker-compose.yml
 package-lock.json
 npm-debug.log
 .idea

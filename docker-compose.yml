@@ -1,0 +1,22 @@
+networks:
+  bpi-traefik:
+    external: true
+
+services:
+  traefik:
+    container_name: bpi-traefik
+    image: traefik:v2.11.7
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - bpi-traefik
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.entrypoints=dashboard"

@@ -1,6 +1,6 @@
 # Best Private Investor Traefik
 
-Traefik build to combine back and front projects into one network.
+Traefik build to combine back and front applications into one network.
 
 - [Backend](https://github.com/dnovikov32/bpi-back)
 - [Frontend](https://github.com/dnovikov32/bpi-front)
